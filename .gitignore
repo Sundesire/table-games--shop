@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+.mvn/
+bootstrap-5.2.2-dist/
+http/
