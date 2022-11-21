@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widht-device-widht, initial-scale=1">
+    <title>Информация об игре</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a th:href="@{/}" class="navbar-brand">Магазин настольных игр</a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a th:href="@{/login}" class="nav-link">Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/registration}" class="nav-link">Регистрация</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Showcase -->
+<section class="bg-info bg-light text-light text-center">
+    <div class="container">
+        <div class="d-flex">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <a href="/">
+                        <img class="img-fluid w-50"
+                             src="https://www.nicepng.com/png/detail/189-1891078_svg-freeuse-stock-file-work-wikimedia-commons-open.png">
+                    </a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Введите название игры"
+                               aria-label="Введите название игры" aria-describedby="search-button">
+                        <button class="btn btn-dark" type="button" id="search-button">Поиск</button>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <a href="/" id="open-cart">
+                        <span class="card-text text-dark">Корзина</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="justify-content-center text-dark">
+    <div class="container d-flex justify-content-center">
+        <h1>Совсем скоро здесь появится корзина</h1>
+    </div>
+</section>
+</body>
+</html>

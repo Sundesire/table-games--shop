@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widht-device-widht, initial-scale=1">
+    <title>Регистрация</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+            <a th:href="@{/}"  class="navbar-brand">Магазин настольных игр</a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navmenu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a th:href="@{/login}" class="nav-link">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/registration}" class="nav-link">Регистрация</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Форма регистрации -->
+    <section>
+        <form th:action="@{/create-user}" th:object="${client}" method="post" >
+            <div class="container text-center col-lg-6 justify-content-center">
+                <h3 class="text-dark">Форма регистрации</h3>
+                    <input class="form-control mb-1" type="text" th:field="*{login}" placeholder="Логин" aria-label="Логин" required minlength="2" maxlength="12"/>
+                    <input class="form-control mb-1" type="text" th:field="*{name}" placeholder="Имя" aria-label="Имя" required minlength="2" maxlength="20"/>
+                    <input class="form-control mb-1" type="text" th:field="*{surname}" placeholder="Фамилия" aria-label="Фамилия" required minlength="2" maxlength="20"/>
+                    <input class="form-control mb-1" type="text" th:field="*{email}" placeholder="Email" aria-label="Email" required />
+                    <input class="form-control mb-1" type="password" th:field="*{password}" placeholder="Пароль" aria-label="Пароль" required minlength="6" maxlength="12"/>
+                <button class="btn btn-dark btn-group-lg" type="submit" id="register_user">Зарегистрироваться</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
